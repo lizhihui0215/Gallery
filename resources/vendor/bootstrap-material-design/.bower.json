@@ -52,6 +52,6 @@
     "commit": "f40aa0a6e6b5fa19912f10b182f7fab4ab950861"
   },
   "_source": "git://github.com/FezVrasta/bootstrap-material-design.git",
-  "_target": "*",
+  "_target": "0.3.0",
   "_originalSource": "bootstrap-material-design"
 }

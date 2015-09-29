@@ -22,6 +22,7 @@
   "dependencies": {
     "jquery": "jquery#^1",
     "bootstrap": "~3.3.5",
-    "bootstrap-material-design" : "*"
+    "bootstrap-material-design" : "0.3.0",
+    "dropzone" : "4.0.1"
   }
 }

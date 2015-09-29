@@ -24,7 +24,8 @@ gulp.task('bower', function(){
 var paths = {
   'jquery' : 'vendor/jquery/dist',
   'bootstrap' : 'vendor/bootstrap/dist',
-  'bootstrap_material_design' : 'vendor/bootstrap-material-design/dist'
+  'bootstrap_material_design' : 'vendor/bootstrap-material-design/dist',
+  'dropzone' : 'vendor/dropzone/dist'
 };
 
 // Compile Without Source Maps
@@ -45,7 +46,8 @@ elixir(function(mix) {
     '../../' + paths.jquery + '/jquery.js',
     '../../' + paths.bootstrap + '/js/bootstrap.js',
     '../../' + paths.bootstrap_material_design + '/js/material.js',
-    '../../' + paths.bootstrap_material_design + '/js/ripples.js'
+    '../../' + paths.bootstrap_material_design + '/js/ripples.js',
+    '../../' + paths.dropzone + '/dropzone.js',
   ], 'public/js/site.js');
 
   // Merge Site css
@@ -53,7 +55,8 @@ elixir(function(mix) {
     '../../' + paths.bootstrap + '/css/bootstrap.css',
     '../../' + paths.bootstrap_material_design + '/css/material.css',
     '../../' + paths.bootstrap_material_design + '/css/ripples.css',
-    '../../' + paths.bootstrap_material_design + '/css/roboto.css'
+    '../../' + paths.bootstrap_material_design + '/css/roboto.css',
+    '../../' + paths.dropzone + '/dropzone.css'
   ], 'public/css/site.css');
 
   // version
