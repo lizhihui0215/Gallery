@@ -56,7 +56,6 @@ elixir(function(mix) {
     '../../' + paths.bootstrap_material_design + '/css/roboto.css'
   ], 'public/css/site.css');
 
-
-
+  // version
   mix.version(["public/css/site.css","public/js/site.js"]);
 });
