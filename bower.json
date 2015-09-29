@@ -1,0 +1,27 @@
+{
+  "name": "Gallery",
+  "version": "1.0.0",
+  "homepage": "http://www.gallery.com",
+  "description": "a webside demo which called gallery build on laravel 5.1",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "lizhihui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "jquery#^1",
+    "bootstrap": "~3.3.5",
+    "bootstrap-material-design" : "*"
+  }
+}

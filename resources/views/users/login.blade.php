@@ -3,7 +3,7 @@
 @section('content')
   <div class="jumbotron col-sm-6 col-sm-push-3" style="margin-top: 5em">
     <h1>Login</h1>
-    <form class="form" action=="{{ url( 'user/do-login' ) }}" method="post">
+    <form class="form" action="{{ url( 'user/do-login' ) }}" method="post">
       <div class="form-group">
         <input class="form-control" id="email" type="text" name="email" placeholder="Enter your email address" value="">
       </div>
@@ -18,6 +18,5 @@
 
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>
-
   </div>
 @endsection
