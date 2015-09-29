@@ -25,4 +25,4 @@ Route::get('user/logout',function(){
 Route::get('gallery/list','GalleryController@viewGalleryList');
 Route::post('gallery/save','GalleryController@saveGallery');
 Route::get('gallery/view/{id}','GalleryController@viewGalleryPics');
-Route::post('image/do-upload','GalleryController@doImageUpload');
+Route::post('images/do-upload','GalleryController@doImageUpload');

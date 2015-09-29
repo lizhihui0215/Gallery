@@ -17,7 +17,7 @@ class CreateImagesTable extends Migration
             $table->integer('gallery_id');
             $table->string('file_name');
             $table->string('file_size',10);
-            $table->string('file_mine',50);
+            $table->string('file_mime',50);
             $table->string('file_path');
             $table->integer('created_by');
             $table->timestamps();

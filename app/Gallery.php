@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Gallery extends Model
@@ -12,5 +11,11 @@ class Gallery extends Model
      * @var string
      */
      protected $table = 'gallery';
-     
+
+     public function images()
+     {
+       // gallery relation to the image
+       return $this->hasMany('App\Image');
+     }
+
 }

@@ -21,7 +21,6 @@ class GalleryController extends Controller
   //
   public function viewGalleryList()
   {
-    # code...
     $galleries = Gallery::all();
 
     return view('gallery')->with('galleries',$galleries);
@@ -58,6 +57,26 @@ class GalleryController extends Controller
 
   public function doImageUpload(Request $request)
   {
-    # code...
+    // get the file from the post request
+    $file = $request->file('file');
+
+    // set my file name
+    $filename = uniqid() . $file->getClientOriginalName();
+
+    // move the file to correct location
+    $file->move('gallery/images',$filename);
+
+    // save the image details into the database
+    $gallery = Gallery::find($request->input('gallery_id'));
+
+    $image = $gallery->images()->create([
+      'gallery_id' => $request->input('gallery_id'),
+      'file_name' => $filename,
+      'file_size' => $file->getClientSize(),
+      'file_mime' => $file->getClientMimeType(),
+      'file_path' => 'gallery/images' . $filename,
+      'created_by' => Auth::user()->id,
+    ]);
+
   }
 }
