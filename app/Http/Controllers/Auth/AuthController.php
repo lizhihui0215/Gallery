@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
+use Session;
 use App\User;
 use Validator;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+
+// use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Session;
+
+
 
 class AuthController extends Controller
 {
@@ -61,5 +69,21 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    protected function doLogin(Request $request)
+    {
+      $credentials = [
+        'email' => $request->input('email'),
+        'password' => $request->input('password')
+      ];
+
+      if(!Auth::attempt($credentials)){
+        Session::flash('flash_error','Something went wrong with you credentials');
+        return redirect()->back();
+      }
+
+      Session::flash('flash_message','You have logged in successfully');
+      return redirect('gallery/list');
     }
 }
