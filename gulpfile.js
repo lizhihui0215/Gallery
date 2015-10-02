@@ -25,7 +25,9 @@ var paths = {
   'jquery' : 'vendor/jquery/dist',
   'bootstrap' : 'vendor/bootstrap/dist',
   'bootstrap_material_design' : 'vendor/bootstrap-material-design/dist',
-  'dropzone' : 'vendor/dropzone/dist'
+  'dropzone' : 'vendor/dropzone/dist',
+  'gallery' : '',
+  'lightbox2' : 'vendor/lightbox2/dist'
 };
 
 // Compile Without Source Maps
@@ -40,14 +42,18 @@ elixir(function(mix) {
   mix.copy('resources/' + paths.bootstrap_material_design + '/fonts/**','public/fonts');
 
   // Copy images straight to public
+  mix.copy('resources/' + paths.lightbox2 + '/images/**', 'public/build/images');
 
   // Merge Site scripts
   mix.scripts([
+    '../../' + paths.lightbox2 + '/js/lightbox-plus-jquery.js',
+    // '../../' + paths.lightbox2 + '/js/lightbox.js',
     '../../' + paths.jquery + '/jquery.js',
     '../../' + paths.bootstrap + '/js/bootstrap.js',
     '../../' + paths.bootstrap_material_design + '/js/material.js',
     '../../' + paths.bootstrap_material_design + '/js/ripples.js',
     '../../' + paths.dropzone + '/dropzone.js',
+    paths.gallery + '/gallery.js',
   ], 'public/js/site.js');
 
   // Merge Site css
@@ -56,7 +62,8 @@ elixir(function(mix) {
     '../../' + paths.bootstrap_material_design + '/css/material.css',
     '../../' + paths.bootstrap_material_design + '/css/ripples.css',
     '../../' + paths.bootstrap_material_design + '/css/roboto.css',
-    '../../' + paths.dropzone + '/dropzone.css'
+    '../../' + paths.dropzone + '/dropzone.css',
+    '../../' + paths.lightbox2 + '/css/lightbox.css'
   ], 'public/css/site.css');
 
   // version
