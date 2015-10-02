@@ -2,7 +2,7 @@
 
 namespace App;
 use Illuminate\Database\Eloquent\Model;
-
+use Image;
 class Gallery extends Model
 {
     /**

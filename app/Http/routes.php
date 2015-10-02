@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('users.login');
 });
 
+Route::get('gallery/delete/{id}', 'GalleryController@deleteGallery');
+
 // Route::post('user/do-login',  'Auth\AuthController@doLogin');
 Route::post('user/do-login','Auth\AuthController@doLogin');
 Route::get('user/logout',function(){

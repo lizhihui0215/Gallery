@@ -55,6 +55,32 @@ class GalleryController extends Controller
     return view('gallery.gallery-view')->with('gallery',$gallery);
   }
 
+  public function deleteGallery($id)
+  {
+    //load the gallery
+    $currentGallery = Gallery::findOrFail($id);
+
+    // check ownershipe
+    if($currentGallery->created_by != Auth::user()->id){
+      abort('403','you have not allowed to delete this gallery');
+    }
+
+    // get the images
+    $images = $currentGallery->images();
+
+    // delete the images
+    foreach ($currentGallery->images as $image) {
+      unlink(public_path($image->file_path));
+    }
+
+    // delete the DB records
+    $images->delete();
+
+    $currentGallery->delete();
+
+    return redirect()->back();
+  }
+
   public function doImageUpload(Request $request)
   {
     // get the file from the post request
