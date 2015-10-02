@@ -16,7 +16,7 @@ var handleDropzoneFileUpload = {
   },
   handleSuccess: function(response){
     var imageList  = $('#gallery-images ul');
-    var imageSrc = baseURL + '/' + response.file_path;
+    var imageSrc = baseURL + '/gallery/images/thumbs/' + response.file_name;
     imageList.append('<li> <a href="'  + imageSrc + '" data-lightbox="mygallery"> <img src="'  + imageSrc + '" alt="" /> </a> </li>');
   }
 }
