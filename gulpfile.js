@@ -27,6 +27,7 @@ var paths = {
   'bootstrap_material_design' : 'vendor/bootstrap-material-design/dist',
   'dropzone' : 'vendor/dropzone/dist',
   'gallery' : '',
+  'site' : '',
   'lightbox2' : 'vendor/lightbox2/dist'
 };
 
@@ -63,7 +64,8 @@ elixir(function(mix) {
     '../../' + paths.bootstrap_material_design + '/css/ripples.css',
     '../../' + paths.bootstrap_material_design + '/css/roboto.css',
     '../../' + paths.dropzone + '/dropzone.css',
-    '../../' + paths.lightbox2 + '/css/lightbox.css'
+    '../../' + paths.lightbox2 + '/css/lightbox.css',
+    paths.site + '/site.css',
   ], 'public/css/site.css');
 
   // version

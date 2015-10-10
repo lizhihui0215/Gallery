@@ -6,7 +6,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-8 col-sm-8">
     @if($galleries->count() > 0)
     <table class="table table-striped table-hover table-bordered">
       <thead>
@@ -32,7 +32,7 @@
 
     @endif
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-4">
     @if(count($errors))
     <div class="alert alert-danger">
       <ul>
