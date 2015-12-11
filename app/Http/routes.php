@@ -24,6 +24,10 @@ Route::get('user/logout',function(){
   return redirect('/');
 });
 
+Route::get('download', function(){
+    return view('download')
+});
+
 Route::get('gallery/list','GalleryController@viewGalleryList');
 Route::post('gallery/save','GalleryController@saveGallery');
 Route::get('gallery/view/{id}','GalleryController@viewGalleryPics');
