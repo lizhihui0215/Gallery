@@ -20,6 +20,6 @@
     </form>
   </div>
   <div class="">
-      <a href="/">Download App</a>
+      <a href="/download">Download App</a>
   </div>
 @endsection
