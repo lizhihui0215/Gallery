@@ -25,7 +25,7 @@ Route::get('user/logout',function(){
 });
 
 Route::get('download', function(){
-    return view('download');
+    return view('downlaod');
 });
 
 Route::get('gallery/list','GalleryController@viewGalleryList');
